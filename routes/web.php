@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,15 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', fn () => dd('admin ui'))->name('web.home');
+Route::get('/', fn () => dd('guest ui'))->name('web.home');
+// contact, gdpr
+// catalogue
 
-Route::middleware('auth')->namespace('Admin')->prefix('admin')->group(function () {
-    Route::get('/', fn () => dd('admin ui'))->name('admin.dashboard');
+Route::middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/', [ DashboardController::class, 'index' ])->name('dashboard.index');
+    // users
+    // items, tags
+    // orders
 });
 
 // Auth Routes

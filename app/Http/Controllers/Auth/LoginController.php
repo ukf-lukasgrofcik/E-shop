@@ -16,7 +16,7 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request) {
         if ( Auth::attempt($request->only([ 'email', 'password' ])) ) {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('dashboard.index');
         }
 
         return back()->withErrors(['password' => 'These credentials do not match our records']);
