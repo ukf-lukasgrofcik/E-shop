@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 <body>
-
 @include('admin._partials._topbar')
 @include('admin._partials._menu')
 
 <div class="page">
     @yield('content')
 </div>
+
+<script src="{{ asset('js/admin.js') }}"></script>
 
 </body>
 </html>

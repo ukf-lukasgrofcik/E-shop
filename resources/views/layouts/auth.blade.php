@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 </head>
 <body>
-
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row mb-3">
@@ -31,5 +30,6 @@
         </div>
     </div>
 
+    <script src="{{ asset('js/auth.js') }}"></script>
 </body>
 </html>

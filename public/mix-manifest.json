@@ -1,6 +1,9 @@
 {
     "/css/sass/admin.css": "/css/sass/admin.css",
     "/css/sass/auth.css": "/css/sass/auth.css",
+    "/css/sass/preloader.css": "/css/sass/preloader.css",
     "/css/auth.css": "/css/auth.css",
-    "/css/admin.css": "/css/admin.css"
+    "/js/auth.js": "/js/auth.js",
+    "/css/admin.css": "/css/admin.css",
+    "/js/admin.js": "/js/admin.js"
 }
