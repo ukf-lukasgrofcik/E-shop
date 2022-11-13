@@ -17,7 +17,7 @@
             <div class="topbar-usermenu">
                 <a href="#" class="topbar-usermenu-item">Profile</a>
                 <a href="#" class="topbar-usermenu-item">Password</a>
-                <form action="{{ route('auth.logout') }}" method="post">
+                <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button class="topbar-usermenu-item-logout text-danger" type="submit">Log Out</button>
                 </form>

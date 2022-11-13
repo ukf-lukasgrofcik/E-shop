@@ -1,13 +1,13 @@
 @extends('layouts.auth')
 
 @section('content')
-    <form action="{{ route('auth.login') }}" method="post">
+    <form method="post">
         @csrf
 
         <div class="row mb-3">
             <div class="col-sm-12">
                 <label for="email">E-mail</label>
-                <a href="{{ route('auth.register.form') }}" class="link-secondary float-end text-decoration-none font-12">Don't have an account?</a>
+                <a href="{{ route('register') }}" class="link-secondary float-end text-decoration-none font-12">Don't have an account?</a>
                 <input type="text" name="email" placeholder="Your e-mail" id="email" class="form-control">
             </div>
         </div>
@@ -15,7 +15,7 @@
         <div class="row mb-1">
             <div class="col-sm-12">
                 <label for="password">Password</label>
-                <a href="#" class="link-secondary float-end text-decoration-none font-12">Forgot your password?</a>
+                <a href="{{ route('password.forgot') }}" class="link-secondary float-end text-decoration-none font-12">Forgot your password?</a>
                 <input type="password" name="password" placeholder="Your password" id="password" class="form-control">
             </div>
         </div>

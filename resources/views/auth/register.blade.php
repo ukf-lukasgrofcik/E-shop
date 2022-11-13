@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-    <form action="{{ route('auth.register') }}" method="post">
+    <form method="post">
         @csrf
 
         <div class="row mb-3">
@@ -21,7 +21,7 @@
         <div class="row mb-3">
             <div class="col-sm-12">
                 <label for="email">E-mail</label>
-                <a href="{{ route('auth.login.form') }}" class="link-secondary float-end text-decoration-none font-12">Already have an account?</a>
+                <a href="{{ route('login') }}" class="link-secondary float-end text-decoration-none font-12">Already have an account?</a>
                 <input type="text" name="email" placeholder="Your e-mail" id="email" class="form-control">
             </div>
         </div>

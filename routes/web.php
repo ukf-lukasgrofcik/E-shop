@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ForgotController;
+use App\Http\Controllers\Auth\ResetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +30,17 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 });
 
 // Auth Routes
-Route::get('/register', [ RegisterController::class, 'form' ])->name('auth.register.form');
-Route::post('/register', [ RegisterController::class, 'register' ])->name('auth.register');
-Route::get('/login', [ LoginController::class, 'form' ])->name('auth.login.form');
-Route::post('/login', [ LoginController::class, 'login' ])->name('auth.login');
-Route::post('/logout', [ LoginController::class, 'logout' ])->name('auth.logout');
+Route::get('/register', [ RegisterController::class, 'form' ])->name('register');
+Route::post('/register', [ RegisterController::class, 'register' ]);
+
+Route::get('/login', [ LoginController::class, 'form' ])->name('login');
+Route::post('/login', [ LoginController::class, 'login' ]);
+Route::post('/logout', [ LoginController::class, 'logout' ])->name('logout');
+
+Route::get('/forgot-password', [ ForgotController::class, 'form' ])->name('password.forgot');
+Route::post('/forgot-password', [ ForgotController::class, 'send' ]);
+Route::get('/forgot-password/sent', [ ForgotController::class, 'sent' ])->name('password.sent');
+
+Route::get('/reset-password', [ ResetController::class, 'form' ])->name('password.reset');
+Route::post('/reset-password', [ ResetController::class, 'reset' ]);
+Route::get('/reset-password/after', [ ResetController::class, 'after' ])->name('password.reset.after');
