@@ -17,10 +17,14 @@ mix
 
     .styles([
         'resources/assets/bootstrap-5.2.2-dist/css/bootstrap.css',
+        'resources/assets/DataTables/datatables.css',
         'public/css/sass/preloader.css',
         'public/css/sass/admin.css',
     ], 'public/css/admin.css')
 
     .scripts([
+        'resources/assets/jquery/jquery-3.6.1.js',
+        'resources/assets/DataTables/datatables.js',
         'resources/assets/bootstrap-5.2.2-dist/js/bootstrap.bundle.js',
+        'resources/assets/custom/js/admin.js',
     ], 'public/js/admin.js');

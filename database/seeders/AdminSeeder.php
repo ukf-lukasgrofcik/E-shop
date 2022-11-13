@@ -19,6 +19,7 @@ class AdminSeeder extends Seeder
             'surname' => 'Doe',
             'email' => 'admin',
             'password' => bcrypt('admin'),
+            'admin' => 1,
         ]);
     }
 }

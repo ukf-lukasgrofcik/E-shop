@@ -3,7 +3,7 @@
 
     <div class="menu-items">
         <a href="{{ route('dashboard.index') }}" class="menu-item">Dashboard</a>
-        <a href="#" class="menu-item">Users</a>
+        <a href="{{ route('users.index') }}" class="menu-item">Users</a>
         <a href="#" class="menu-item">Items</a>
     </div>
 </div>
