@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -44,6 +45,10 @@ class User extends Authenticatable
 
     public function getFullNameAttribute() {
         return "$this->name $this->surname";
+    }
+
+    public function getFormattedCreatedAtAttribute() {
+        return Carbon::parse($this->created_at)->format('d.m.Y H:i:s');
     }
 
 }

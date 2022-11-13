@@ -3,6 +3,7 @@
     height: 60px;
     width: 100%;
     display: flex;
+    z-index: 100;
 }
 .topbar-right {
     box-shadow: 0 2px 4px 0 #e8e8e8;
@@ -135,4 +136,9 @@
     width: calc(100% - 200px);
     min-height: calc(100vh - 60px);
     padding: 20px;
+}
+.card {
+    padding: 20px;
+    box-shadow: 0 0 5px 0 #a0a0a0;
+    border-radius: 5px;
 }

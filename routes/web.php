@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotController;
 use App\Http\Controllers\Auth\ResetController;
+use App\Http\Controllers\Admin\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,10 @@ Route::get('/', fn () => dd('guest ui'))->name('web.home');
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', [ DashboardController::class, 'index' ])->name('dashboard.index');
-    // users
+
+    Route::resource('/users', UsersController::class)
+        ->only([ 'index' ]);
+
     // items, tags
     // orders
 });
