@@ -1,0 +1,146 @@
+#preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #efefef;
+    z-index: 99999999;
+}
+#preloader * {
+    box-sizing: content-box;
+}
+#preloader>div {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 184px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+}
+#preloader>div>:first-child {
+    width: 46px;
+    height: 46px;
+    padding-right: 46px;
+    padding-bottom: 46px;
+    animation: preloader-square 5s ease infinite;
+}
+#preloader>div>:first-child>div {
+    width: 26px;
+    height: 26px;
+    padding: 10px;
+    background-color: #cfcfcf;
+}
+#preloader>div>:first-child>div>div {
+    width: 26px;
+    height: 26px;
+    animation: preloader-antisquare 5s ease infinite;
+}
+#preloader>div>:first-child>div>div>div {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px dashed black;
+    animation: preloader-wheel 5s linear infinite;
+}
+#preloader>div>div:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 46px 46px 0;
+    width: 46px;
+    height: 46px;
+}
+#preloader>div>div:not(:first-child)>div {
+    padding-bottom: 44px;
+    width: 46px;
+    height: 2px;
+}
+#preloader>div>div:not(:first-child)>div>div {
+    width: 46px;
+    height: 2px;
+    background-color: #a0a0a0;
+}
+#preloader>div>div:not(:first-child):nth-child(2)>div {
+    transform: rotate(180deg);
+}
+#preloader>div>div:not(:first-child):nth-child(3) {
+    animation: preloader-b2 5s ease infinite;
+}
+#preloader>div>div:not(:first-child):nth-child(3)>div {
+    transform: rotate(90deg);
+}
+#preloader>div>div:not(:first-child):nth-child(4)>div {
+    transform: rotate(0deg);
+    animation: preloader-b3-div 5s ease infinite;
+}
+#preloader>div>div:not(:first-child):nth-child(4) {
+    animation: preloader-b3 5s ease infinite;
+}
+#preloader>div>div:not(:first-child):nth-child(5)>div {
+    transform: rotate(270deg);
+    animation: preloader-b4-div 5s ease infinite;
+}
+#preloader>div>div:not(:first-child):nth-child(5) {
+    animation: preloader-b4 5s ease infinite;
+}
+#preloader.loaded {
+    animation: preloader-loaded .3s ease infinite;
+}
+
+@keyframes preloader-square {
+    0%, 100% { transform: rotate(0deg); }
+    16.666666%, 83.333334% { transform: rotate(90deg); }
+    16.666667%, 83.333333% { transform: translateX(50%) rotate(0deg); }
+    33.333333%, 66.666667% { transform: translateX(50%) rotate(90deg); }
+    33.333334%, 66.666666% { transform: translateX(100%) rotate(0deg); }
+    50.000000%, 50.000001% { transform: translateX(100%) rotate(90deg); }
+}
+@keyframes preloader-b2 {
+    0%, 100% { transform: rotate(0deg); }
+    16.666666%, 83.333334% { transform: rotate(90deg); }
+}
+@keyframes preloader-b3 {
+    0%, 100% { transform: rotate(0deg); }
+    16.666666%, 83.333334% { transform: rotate(90deg); }
+    16.666667%, 83.333333% { transform: translateX(50%) rotate(0deg); }
+    33.333333%, 66.666667% { transform: translateX(50%) rotate(90deg); }
+}
+@keyframes preloader-b3-div {
+    0%, 100% { transform: rotate(0deg); }
+    16.666666%, 83.333334% { transform: rotate(0deg); }
+    16.666667%, 83.333333% { transform: rotate(90deg); }
+    33.333333%, 66.666667% { transform: rotate(90deg); }
+}
+@keyframes preloader-b4 {
+    0%, 100% { transform: rotate(0deg); }
+    16.666666%, 83.333334% { transform: rotate(90deg); }
+    16.666667%, 83.333333% { transform: translateX(50%) rotate(0deg); }
+    33.333333%, 66.666667% { transform: translateX(50%) rotate(90deg); }
+    33.333334%, 66.666666% { transform: translateX(100%) rotate(0deg); }
+    50.000000%, 50.000001% { transform: translateX(100%) rotate(90deg); }
+}
+@keyframes preloader-b4-div {
+    0%, 100% { transform: rotate(270deg); }
+    16.666666%, 83.333334% { transform: rotate(270deg); }
+    16.666667%, 83.333333% { transform: rotate(0deg); }
+    33.333333%, 66.666667% { transform: rotate(0deg); }
+    33.333334%, 66.666666% { transform: rotate(90deg); }
+    50.000000%, 50.000001% { transform: rotate(90deg); }
+}
+@keyframes preloader-antisquare {
+    0%, 100% { transform: rotate(0deg); }
+    16.666666%, 83.333334% { transform: rotate(-90deg); }
+    16.666667%, 83.333333% { transform: rotate(0deg); }
+    33.333333%, 66.666667% { transform: rotate(-90deg); }
+    33.333334%, 66.666666% { transform: rotate(0deg); }
+    50.000000%, 50.000001% { transform: rotate(-90deg); }
+}
+@keyframes preloader-wheel {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-1440deg); }
+}
+@keyframes preloader-loaded {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
